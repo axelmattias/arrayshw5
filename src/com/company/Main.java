@@ -3,19 +3,21 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        int[] numbers = {-3, 2, 6, -11};
-        int[] sumarray = new int[numbers.length];
-        int sum = 0;
 
-        for (int i = 0; i < numbers.length; i++)
-        {
-            sum = sum + numbers[i];
-            sumarray[i] = sum;
-        }
 
-         for (int v : sumarray) {
-            System.out.print(v + " ");
-        }
+                int[] array = {9, 7, 2, 11};
+                int i = 1;
+                while (i < array.length) {
+                    int val = array[i];
+                    int j = i - 1;
+                    while (j >= 0 && array[j] > val) {
+                        array[j + 1] = array[j];
+                        j--;
+                    }
+                    array[j + 1] = val;
+                    i++;
+                }
+                for (int v: array)
+                    System.out.println(v);
+            }
     }
-}
-
